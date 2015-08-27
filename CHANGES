@@ -1,0 +1,1059 @@
+2009-05-19 13:45  oetiker
+
+	* branches/1.3/program/bindings/perl-piped/RRDp.pm,
+	  branches/1.3/program/bindings/perl-shared/RRDs.pm,
+	  branches/1.3/program/configure.ac,
+	  branches/1.3/program/doc/rrdbuild.pod,
+	  branches/1.3/program/rrdtool.spec,
+	  branches/1.3/program/src/pngsize.c,
+	  branches/1.3/program/src/rrd.h,
+	  branches/1.3/program/src/rrd_cgi.c,
+	  branches/1.3/program/src/rrd_create.c,
+	  branches/1.3/program/src/rrd_datalang.c,
+	  branches/1.3/program/src/rrd_diff.c,
+	  branches/1.3/program/src/rrd_dump.c,
+	  branches/1.3/program/src/rrd_error.c,
+	  branches/1.3/program/src/rrd_fetch.c,
+	  branches/1.3/program/src/rrd_first.c,
+	  branches/1.3/program/src/rrd_format.c,
+	  branches/1.3/program/src/rrd_format.h,
+	  branches/1.3/program/src/rrd_gfx.c,
+	  branches/1.3/program/src/rrd_graph.c,
+	  branches/1.3/program/src/rrd_graph_helper.c,
+	  branches/1.3/program/src/rrd_hw.c,
+	  branches/1.3/program/src/rrd_hw.h,
+	  branches/1.3/program/src/rrd_i18n.h,
+	  branches/1.3/program/src/rrd_info.c,
+	  branches/1.3/program/src/rrd_is_thread_safe.h,
+	  branches/1.3/program/src/rrd_last.c,
+	  branches/1.3/program/src/rrd_lastupdate.c,
+	  branches/1.3/program/src/rrd_not_thread_safe.c,
+	  branches/1.3/program/src/rrd_open.c,
+	  branches/1.3/program/src/rrd_resize.c,
+	  branches/1.3/program/src/rrd_restore.c,
+	  branches/1.3/program/src/rrd_rpncalc.c,
+	  branches/1.3/program/src/rrd_rpncalc.h,
+	  branches/1.3/program/src/rrd_thread_safe.c,
+	  branches/1.3/program/src/rrd_thread_safe_nt.c,
+	  branches/1.3/program/src/rrd_tool.c,
+	  branches/1.3/program/src/rrd_tool.h,
+	  branches/1.3/program/src/rrd_tune.c,
+	  branches/1.3/program/src/rrd_update.c,
+	  branches/1.3/program/src/rrd_version.c,
+	  branches/1.3/program/src/rrd_xport.c,
+	  branches/1.3/program/src/rrd_xport.h,
+	  branches/1.3/program/src/rrdupdate.c: prepare for the release of
+	  rrdtool-1.3.8
+
+2009-05-18 14:23  oetiker
+
+	* branches/1.3/program/bindings/python/rrdtoolmodule.c,
+	  bindings/python/rrdtoolmodule.c: integrated fix for debian bug
+	  #529291 as supplied by Anders Hammarquist
+
+2009-05-11 21:25  oetiker
+
+	* branches/1.3/program/configure.ac,
+	  branches/1.3/program/src/rrd_getopt.c, configure.ac,
+	  src/rrd_getopt.c: fix rrd_getops use of external variables (optarg
+	  and friends) ... most prominently is kills a segfault when using
+	  rrdtool perl bindings on solaris ... thanks to Ihsan Dogan for
+	  helping with tracking this down and providing access to sparc
+	  solaris boxes.
+
+2009-04-29 07:17  oetiker
+
+	* branches/1.3/website/rrdworld/index.wml,
+	  branches/1.3/website/rrdworld/zerod.xml: added zerod
+
+2009-04-29 06:52  oetiker
+
+	* branches/1.3/program/CONTRIBUTORS,
+	  branches/1.3/program/doc/rrdgraph_data.pod, CONTRIBUTORS,
+	  doc/rrdgraph_data.pod: added some remarks on CDEF versus VDEF to
+	  the docs -- Pablo Sanchez
+
+2009-04-17 09:53  oetiker
+
+	* branches/1.3/program/src/rrd_tool.c, src/rrd_tool.c: add
+	  documentation for graph-render-mode
+
+2009-04-15 07:05  oetiker
+
+	* branches/1.3/program/src/rrd_restore.c, src/rrd_restore.c: fix
+	  comments and error messages in rrd_restore patch
+
+2009-04-15 07:02  oetiker
+
+	* branches/1.3/program/src/rrd_restore.c, src/rrd_restore.c: Fix
+	  casting issues in rrd_restore. The bug manifested when compiled on
+	  sparc v9 as explained in #218. Patch based in input provided by
+	  poster of #218.
+
+2009-04-14 13:55  oetiker
+
+	* branches/1.2/program/bindings/ruby/main.c,
+	  branches/1.3/program/bindings/ruby/main.c, bindings/ruby/main.c:
+	  make ruby bindings compile with newer ruby versions ... fix for
+	  #217 patch provided by rrd trac user.
+
+2009-04-14 07:51  oetiker
+
+	* branches/1.3/program/bindings/perl-piped/RRDp.pm,
+	  bindings/perl-piped/RRDp.pm: Generate an error message when using
+	  RRDp with graph - this can not work reliably. (Debian Bug#251701)
+	  -- Sebastian Harl
+
+2009-04-09 15:04  oetiker
+
+	* branches/1.3/program/doc/rrdtutorial.pod, doc/rrdtutorial.pod:
+	  added missing newline -- by sebastian harl
+
+2009-04-07 08:40  oetiker
+
+	* branches/1.3/website/index.wml: added feed updates
+
+2009-04-07 07:31  oetiker
+
+	* branches/1.3/program/bindings/perl-piped/RRDp.pm,
+	  branches/1.3/program/bindings/perl-shared/RRDs.pm,
+	  branches/1.3/program/configure.ac,
+	  branches/1.3/program/doc/rrdbuild.pod,
+	  branches/1.3/program/rrdtool.spec,
+	  branches/1.3/program/src/pngsize.c,
+	  branches/1.3/program/src/rrd.h,
+	  branches/1.3/program/src/rrd_cgi.c,
+	  branches/1.3/program/src/rrd_create.c,
+	  branches/1.3/program/src/rrd_datalang.c,
+	  branches/1.3/program/src/rrd_diff.c,
+	  branches/1.3/program/src/rrd_dump.c,
+	  branches/1.3/program/src/rrd_error.c,
+	  branches/1.3/program/src/rrd_fetch.c,
+	  branches/1.3/program/src/rrd_first.c,
+	  branches/1.3/program/src/rrd_format.c,
+	  branches/1.3/program/src/rrd_format.h,
+	  branches/1.3/program/src/rrd_gfx.c,
+	  branches/1.3/program/src/rrd_graph.c,
+	  branches/1.3/program/src/rrd_graph_helper.c,
+	  branches/1.3/program/src/rrd_hw.c,
+	  branches/1.3/program/src/rrd_hw.h,
+	  branches/1.3/program/src/rrd_i18n.h,
+	  branches/1.3/program/src/rrd_info.c,
+	  branches/1.3/program/src/rrd_is_thread_safe.h,
+	  branches/1.3/program/src/rrd_last.c,
+	  branches/1.3/program/src/rrd_lastupdate.c,
+	  branches/1.3/program/src/rrd_not_thread_safe.c,
+	  branches/1.3/program/src/rrd_open.c,
+	  branches/1.3/program/src/rrd_resize.c,
+	  branches/1.3/program/src/rrd_restore.c,
+	  branches/1.3/program/src/rrd_rpncalc.c,
+	  branches/1.3/program/src/rrd_rpncalc.h,
+	  branches/1.3/program/src/rrd_thread_safe.c,
+	  branches/1.3/program/src/rrd_thread_safe_nt.c,
+	  branches/1.3/program/src/rrd_tool.c,
+	  branches/1.3/program/src/rrd_tool.h,
+	  branches/1.3/program/src/rrd_tune.c,
+	  branches/1.3/program/src/rrd_update.c,
+	  branches/1.3/program/src/rrd_version.c,
+	  branches/1.3/program/src/rrd_xport.c,
+	  branches/1.3/program/src/rrd_xport.h,
+	  branches/1.3/program/src/rrdupdate.c: prepare for the release of
+	  rrdtool-1.3.7
+
+2009-04-07 07:25  oetiker
+
+	* branches/1.3/website/.htaccess,
+	  branches/1.3/website/gallery/index.en.html,
+	  branches/1.3/website/gallery/miszek.xml,
+	  branches/1.3/website/inc/template.inc,
+	  branches/1.3/website/rrdworld/index.wml,
+	  branches/1.3/website/rrdworld/tacLOG_RRD.png,
+	  branches/1.3/website/rrdworld/tacLOG_RRD.xml,
+	  branches/1.3/website/site-sync: sync up
+
+2009-04-07 07:23  oetiker
+
+	* branches/1.3/program/doc/rrdbuild.pod: fix build docs
+
+2009-04-07 07:21  oetiker
+
+	* branches/1.3/program/m4: provide have m4 macros go here
+
+2009-04-07 07:20  oetiker
+
+	* branches/1.3/program/configure.ac: set helper directory
+
+2009-04-07 07:20  oetiker
+
+	* branches/1.3/program/src/rrd_graph.c: fix lazy fix ... syntax
+	  error
+
+2009-04-07 07:19  oetiker
+
+	* branches/1.3/program/Makefile.am: update ACLOCAL flags
+
+2009-04-07 06:37  oetiker
+
+	* branches/1.3/program/doc/rrdgraph.pod,
+	  branches/1.3/program/src/rrd_graph.c, NEWS, doc/rrdgraph.pod,
+	  src/rrd_graph.c: fix for #213 restore old behaviour of --lazy.
+	  Even in lazy mode all the data calculation elements are run. The
+	  main time saving comes from the fact that the graph is not being
+	  drawn and the image does not have to be compressed.
+
+2009-04-07 06:03  oetiker
+
+	* branches/1.3/program/src/rrd_dump.c, src/rrd_dump.c: make sure
+	  rrd_dump outputs numbers with C locale so that . does not suddenly
+	  become , this fixes #212
+
+2009-04-06 14:12  oetiker
+
+	* branches/1.3/program/src/rrd_update.c, src/rrd_update.c: printf
+	  for time_t with %lli can easily cause a segfault since on many
+	  platforms time_t is only 32bit ... by adding (long long) to the
+	  time value this gets fixed.
+
+2009-03-21 10:44  oetiker
+
+	* branches/1.3/program/src/rrd_hw.c: removed more rrd_flush
+	  instances
+
+2009-03-21 09:55  oetiker
+
+	* branches/1.3/program/src/rrd_hw.c: rrd_flush is not necessary here
+	  this used to ba a call to fflush which is something different
+	  anyway.
+
+2009-03-08 08:02  oetiker
+
+	* branches/1.2/program/WIN32-BUILD-TIPS.txt,
+	  branches/1.2/program/bindings/Makefile.am,
+	  branches/1.2/program/bindings/perl-shared/MANIFEST,
+	  branches/1.2/program/bindings/perl-shared/ntmake-build,
+	  branches/1.2/program/bindings/perl-shared/ntmake.PL,
+	  branches/1.3/program/WIN32-BUILD-TIPS.txt,
+	  branches/1.3/program/bindings/Makefile.am,
+	  branches/1.3/program/bindings/perl-shared/MANIFEST,
+	  branches/1.3/program/bindings/perl-shared/ntmake-build,
+	  branches/1.3/program/bindings/perl-shared/ntmake.PL,
+	  WIN32-BUILD-TIPS.txt, bindings/Makefile.am,
+	  bindings/perl-shared/MANIFEST, bindings/perl-shared/ntmake-build,
+	  bindings/perl-shared/ntmake.PL: Renaming ntmake.pl to ntmake.PL
+	  (r1742) had unforseen side effects. At least on freebsd ntmake.PL
+	  gets called automatically during build. This is not desired. I
+	  renamed the file to ntmake-build sinc it gets called explicilty on
+	  windows anyway. Reported by Kevin modified by Tobi
+
+2009-03-06 05:51  oetiker
+
+	* branches/1.3/program/src/rrd_xport.c, src/rrd_xport.c: there were
+	  two lines of debug info printed by rrd_xport, messing up the xml
+	  code. Fix by Alejandro Galue.
+
+2009-03-06 05:40  oetiker
+
+	* branches/1.3/program/configure.ac,
+	  branches/1.3/program/src/rrd_thread_safe.c: Even though POSIX/XSI
+	  requires "strerror_r" to return an "int", some systems (e.g. the
+	  GNU libc) return a "char *" _and_ ignore the second argument (user
+	  provided buffer). The configure script now checks for that
+	  behavior using AC_FUNC_STRERROR_R. rrd_strerror() in
+	  rrd_thread_safe.c has been updated to (hopefully) handle all
+	  possible cases. Previously, rrd_strerror() would have returned
+	  "strerror_r failed. sorry!" in mostly any cases when using glibc,
+	  since "if (strerror_r())" had been used to check for errors which
+	  evaluates to true if a (non-NULL) pointer was returned. Now, we,
+	  at least, return the error number in case anything else fails.
+	  Thanks to Alessandro Iurlano for reporting this issue after
+	  spotting it in collectd <http://collectd.org>. patch by Sebastian
+	  Harl
+
+2009-02-21 09:46  oetiker
+
+	* branches/1.3/website/rrdworld/index.wml,
+	  branches/1.3/website/rrdworld/observer.png,
+	  branches/1.3/website/rrdworld/observer.xml,
+	  branches/1.3/website/rrdworld/observernms.jpg,
+	  branches/1.3/website/rrdworld/observernms.xml: update observer
+	  entry
+
+2009-02-21 09:43  oetiker
+
+	* branches/1.2/program/doc/bin_dec_hex.pod,
+	  branches/1.2/program/doc/cdeftutorial.pod,
+	  branches/1.2/program/doc/rrdgraph.pod,
+	  branches/1.2/program/doc/rrdgraph_data.pod,
+	  branches/1.2/program/doc/rrdgraph_examples.pod,
+	  branches/1.2/program/doc/rrdgraph_graph.pod,
+	  branches/1.2/program/doc/rrdgraph_rpn.pod,
+	  branches/1.2/program/doc/rrdresize.pod,
+	  branches/1.2/program/doc/rrdtutorial.es.pod,
+	  branches/1.2/program/doc/rrdtutorial.pod,
+	  branches/1.3/program/doc/bin_dec_hex.pod,
+	  branches/1.3/program/doc/cdeftutorial.pod,
+	  branches/1.3/program/doc/rrdgraph.pod,
+	  branches/1.3/program/doc/rrdgraph_data.pod,
+	  branches/1.3/program/doc/rrdgraph_examples.pod,
+	  branches/1.3/program/doc/rrdgraph_graph.pod,
+	  branches/1.3/program/doc/rrdgraph_rpn.pod,
+	  branches/1.3/program/doc/rrdresize.pod,
+	  branches/1.3/program/doc/rrdtutorial.es.pod,
+	  branches/1.3/program/doc/rrdtutorial.pod, doc/bin_dec_hex.pod,
+	  doc/cdeftutorial.pod, doc/rrdgraph.pod, doc/rrdgraph_data.pod,
+	  doc/rrdgraph_examples.pod, doc/rrdgraph_graph.pod,
+	  doc/rrdgraph_rpn.pod, doc/rrdresize.pod, doc/rrdtutorial.es.pod,
+	  doc/rrdtutorial.pod: Misc documentation fixes by Alex van den
+	  Bogaerdt
+
+2009-02-21 09:22  oetiker
+
+	* branches/1.3/program/doc/rrdgraph.pod,
+	  branches/1.3/program/doc/rrdgraph_rpn.pod: Documentation fixes by
+	  Bernhard Reutner-Fischer
+
+2009-01-26 05:59  oetiker
+
+	* branches/1.3/website/inc/design.css: fix css to not mutilate trac
+	  layout
+
+2009-01-25 22:39  oetiker
+
+	* branches/1.3/program/doc/rrdgraph.pod, doc/rrdgraph.pod: added doc
+	  on new graphv graph_start und graph_end info variables
+
+2009-01-25 22:02  oetiker
+
+	* branches/1.2/program/src/rrd_dump.c,
+	  branches/1.2/program/src/rrd_first.c,
+	  branches/1.3/program/src/rrd_dump.c,
+	  branches/1.3/program/src/rrd_first.c,
+	  branches/1.3/program/src/rrd_graph.c, src/rrd_dump.c,
+	  src/rrd_first.c, src/rrd_graph.c: fix type conversion error (on
+	  windows) unsigned/signed affecting timestamps on rrd_dump.
+
+2009-01-25 21:52  oetiker
+
+	* branches/1.2/program/bindings/Makefile.am,
+	  branches/1.2/program/bindings/perl-shared/ntmake.PL,
+	  branches/1.2/program/bindings/perl-shared/ntmake.pl,
+	  branches/1.3/program/bindings/Makefile.am,
+	  branches/1.3/program/bindings/perl-shared/ntmake.PL,
+	  branches/1.3/program/bindings/perl-shared/ntmake.pl,
+	  bindings/Makefile.am, bindings/perl-shared/ntmake.PL,
+	  bindings/perl-shared/ntmake.pl: rename ntmake.pl to ntmake.PL so
+	  that it does not get installed
+
+2009-01-25 15:49  oetiker
+
+	* branches/1.3/website/download.wml,
+	  branches/1.3/website/gallery/index.wml,
+	  branches/1.3/website/gallery/miszek.png,
+	  branches/1.3/website/gallery/miszek.xml,
+	  branches/1.3/website/index.wml,
+	  branches/1.3/website/rrdworld/index.wml,
+	  branches/1.3/website/rrdworld/lpar2rrd.png,
+	  branches/1.3/website/rrdworld/lpar2rrd.xml,
+	  branches/1.3/website/sponsor.wml: misc web updates
+
+2009-01-22 15:43  oetiker
+
+	* branches/1.3/program/src/rrd_open.c: Missed to include utime.h.
+	  #207.
+
+2009-01-19 14:27  oetiker
+
+	* branches/1.3/program/bindings/perl-piped/RRDp.pm,
+	  branches/1.3/program/bindings/perl-shared/RRDs.pm,
+	  branches/1.3/program/configure.ac,
+	  branches/1.3/program/doc/rrdbuild.pod,
+	  branches/1.3/program/rrdtool-1.3-release,
+	  branches/1.3/program/rrdtool.spec,
+	  branches/1.3/program/src/pngsize.c,
+	  branches/1.3/program/src/rrd.h,
+	  branches/1.3/program/src/rrd_cgi.c,
+	  branches/1.3/program/src/rrd_create.c,
+	  branches/1.3/program/src/rrd_datalang.c,
+	  branches/1.3/program/src/rrd_diff.c,
+	  branches/1.3/program/src/rrd_dump.c,
+	  branches/1.3/program/src/rrd_error.c,
+	  branches/1.3/program/src/rrd_fetch.c,
+	  branches/1.3/program/src/rrd_first.c,
+	  branches/1.3/program/src/rrd_format.c,
+	  branches/1.3/program/src/rrd_format.h,
+	  branches/1.3/program/src/rrd_gfx.c,
+	  branches/1.3/program/src/rrd_graph.c,
+	  branches/1.3/program/src/rrd_graph_helper.c,
+	  branches/1.3/program/src/rrd_hw.c,
+	  branches/1.3/program/src/rrd_hw.h,
+	  branches/1.3/program/src/rrd_i18n.h,
+	  branches/1.3/program/src/rrd_info.c,
+	  branches/1.3/program/src/rrd_is_thread_safe.h,
+	  branches/1.3/program/src/rrd_last.c,
+	  branches/1.3/program/src/rrd_lastupdate.c,
+	  branches/1.3/program/src/rrd_not_thread_safe.c,
+	  branches/1.3/program/src/rrd_open.c,
+	  branches/1.3/program/src/rrd_resize.c,
+	  branches/1.3/program/src/rrd_restore.c,
+	  branches/1.3/program/src/rrd_rpncalc.c,
+	  branches/1.3/program/src/rrd_rpncalc.h,
+	  branches/1.3/program/src/rrd_thread_safe.c,
+	  branches/1.3/program/src/rrd_thread_safe_nt.c,
+	  branches/1.3/program/src/rrd_tool.c,
+	  branches/1.3/program/src/rrd_tool.h,
+	  branches/1.3/program/src/rrd_tune.c,
+	  branches/1.3/program/src/rrd_update.c,
+	  branches/1.3/program/src/rrd_version.c,
+	  branches/1.3/program/src/rrd_xport.c,
+	  branches/1.3/program/src/rrd_xport.h,
+	  branches/1.3/program/src/rrdupdate.c: prepare for the release of
+	  rrdtool-1.3.6
+
+2009-01-14 08:14  oetiker
+
+	* branches/1.3/program/src/rrd_graph.c, src/rrd_graph.c: In
+	  rrd_graph: the width/height values are written into
+	  rrd_infoval_t's u_cnt but read out of u_int (u_long vs. int). This
+	  breaks on LP64BE. Patch by Rafal Boni rafal pobox.com
+
+2009-01-09 06:14  oetiker
+
+	* branches/1.3/website/download.wml,
+	  branches/1.3/website/sponsor.wml,
+	  branches/1.3/website/tut/index.wml: added links
+
+2009-01-06 16:32  oetiker
+
+	* branches/1.3/program/src/rrd_resize.c, src/rrd_resize.c: with MMAP
+	  enabled rrd resize GROW was broken ... this fixes it ...
+
+2009-01-06 15:45  oetiker
+
+	* branches/1.2/program/src/rrd_graph.c,
+	  branches/1.3/program/src/rrd_graph.c, src/rrd_graph.c: TICK with
+	  negative numbers should 'start from the top of the graph' looking
+	  down ... now it does.
+
+2009-01-06 14:54  oetiker
+
+	* branches/1.2/program/src/rrd_cgi.c,
+	  branches/1.3/program/src/rrd_cgi.c, src/rrd_cgi.c: fix for
+	  segfault in rrd_cgi: caused by freeing a invalid address when
+	  printing an error message.
+
+2008-12-26 08:05  oetiker
+
+	* branches/1.3/program/configure.ac,
+	  branches/1.3/program/src/rrd_graph.h, configure.ac,
+	  src/rrd_graph.h: Include libgen.h to get prototype for basename in
+	  a POSIX conformant way. Fix for #202.
+
+2008-12-26 08:03  oetiker
+
+	* branches/1.3/program/doc/rrdbuild.pod, doc/rrdbuild.pod:
+	  improvements for build docs by Zorzoli, Pablo
+
+2008-12-22 21:23  oetiker
+
+	* branches/1.3/program/src/rrd_fetch.c, src/rrd_fetch.c: should free
+	  memory after a successful fetch too ...
+
+2008-12-22 21:23  oetiker
+
+	* branches/1.3/program/bindings/perl-shared/RRDs.pm,
+	  bindings/perl-shared/RRDs.pm: documentation fixes
+
+2008-12-22 10:25  oetiker
+
+	* branches/1.3/website/logos/asdasd_101x51.png: fixed size
+
+2008-12-22 07:21  oetiker
+
+	* branches/1.3/program/doc/rrdgraph.pod, doc/rrdgraph.pod: Fix for
+	  POD error by Sebasian Harl
+
+2008-12-22 07:20  oetiker
+
+	* branches/1.3/program/doc/bin_dec_hex.pod,
+	  branches/1.3/program/doc/rpntutorial.pod,
+	  branches/1.3/program/doc/rrdbuild.pod,
+	  branches/1.3/program/doc/rrdcgi.pod,
+	  branches/1.3/program/doc/rrdgraph-old.pod,
+	  branches/1.3/program/doc/rrdgraph.pod,
+	  branches/1.3/program/doc/rrdgraph_data.pod,
+	  branches/1.3/program/doc/rrdgraph_examples.pod,
+	  branches/1.3/program/doc/rrdgraph_graph.pod,
+	  branches/1.3/program/doc/rrdtool.pod,
+	  branches/1.3/program/doc/rrdtutorial.pod, doc/bin_dec_hex.pod,
+	  doc/rpntutorial.pod, doc/rrdbuild.pod, doc/rrdcgi.pod,
+	  doc/rrdgraph-old.pod, doc/rrdgraph.pod, doc/rrdgraph_data.pod,
+	  doc/rrdgraph_examples.pod, doc/rrdgraph_graph.pod,
+	  doc/rrdgraph_libdbi.pod, doc/rrdtool.pod, doc/rrdtutorial.pod:
+	  Fixes some typos by Sebastian Harl.
+
+2008-12-19 14:26  oetiker
+
+	* branches/1.3/program/src/Makefile.am,
+	  branches/1.3/program/src/plbasename.c,
+	  branches/1.3/program/src/plbasename.h,
+	  branches/1.3/program/src/rrd_graph.c,
+	  branches/1.3/program/src/rrd_update.c,
+	  branches/1.3/program/win32/rrdlib.vcproj, src/Makefile.am,
+	  src/plbasename.c, src/plbasename.h, src/rrd_graph.c,
+	  src/rrd_update.c, win32/rrdlib.vcproj: win32 fixes by Stefan .
+	  Ludewig . exitgames . com * added portable plbasename since
+	  basename is not available on stock win32 * rrd_update was using %d
+	  to show a timestamp ... %lli is better since it also will show
+	  64bit time_t correctly.
+
+2008-12-18 23:56  oetiker
+
+	* branches/1.3/program/Makefile.am, Makefile.am: fix extra dist to
+	  include missing win32 files
+
+2008-12-18 07:34  oetiker
+
+	* branches/1.3/website/index.wml,
+	  branches/1.3/website/logos/hitmeister.gif,
+	  branches/1.3/website/sponsor.wml: added hitmeister sponsor
+
+2008-12-16 08:04  oetiker
+
+	* branches/1.3/website/inc/trac.css: special css for trac
+
+2008-12-15 22:06  oetiker
+
+	* branches/1.3/program/bindings/perl-piped/RRDp.pm,
+	  branches/1.3/program/bindings/perl-shared/RRDs.pm,
+	  branches/1.3/program/configure.ac,
+	  branches/1.3/program/doc/rrdbuild.pod,
+	  branches/1.3/program/rrdtool.spec,
+	  branches/1.3/program/src/pngsize.c,
+	  branches/1.3/program/src/rrd.h,
+	  branches/1.3/program/src/rrd_cgi.c,
+	  branches/1.3/program/src/rrd_create.c,
+	  branches/1.3/program/src/rrd_datalang.c,
+	  branches/1.3/program/src/rrd_diff.c,
+	  branches/1.3/program/src/rrd_dump.c,
+	  branches/1.3/program/src/rrd_error.c,
+	  branches/1.3/program/src/rrd_fetch.c,
+	  branches/1.3/program/src/rrd_first.c,
+	  branches/1.3/program/src/rrd_format.c,
+	  branches/1.3/program/src/rrd_format.h,
+	  branches/1.3/program/src/rrd_gfx.c,
+	  branches/1.3/program/src/rrd_graph.c,
+	  branches/1.3/program/src/rrd_graph_helper.c,
+	  branches/1.3/program/src/rrd_hw.c,
+	  branches/1.3/program/src/rrd_hw.h,
+	  branches/1.3/program/src/rrd_i18n.h,
+	  branches/1.3/program/src/rrd_info.c,
+	  branches/1.3/program/src/rrd_is_thread_safe.h,
+	  branches/1.3/program/src/rrd_last.c,
+	  branches/1.3/program/src/rrd_lastupdate.c,
+	  branches/1.3/program/src/rrd_not_thread_safe.c,
+	  branches/1.3/program/src/rrd_open.c,
+	  branches/1.3/program/src/rrd_resize.c,
+	  branches/1.3/program/src/rrd_restore.c,
+	  branches/1.3/program/src/rrd_rpncalc.c,
+	  branches/1.3/program/src/rrd_rpncalc.h,
+	  branches/1.3/program/src/rrd_thread_safe.c,
+	  branches/1.3/program/src/rrd_thread_safe_nt.c,
+	  branches/1.3/program/src/rrd_tool.c,
+	  branches/1.3/program/src/rrd_tool.h,
+	  branches/1.3/program/src/rrd_tune.c,
+	  branches/1.3/program/src/rrd_update.c,
+	  branches/1.3/program/src/rrd_version.c,
+	  branches/1.3/program/src/rrd_xport.c,
+	  branches/1.3/program/src/rrd_xport.h,
+	  branches/1.3/program/src/rrdupdate.c: prepare for the release of
+	  rrdtool-1.3.5
+
+2008-12-11 14:31  oetiker
+
+	* branches/1.2/program/src/rrd_fetch.c,
+	  branches/1.3/program/src/rrd_fetch.c, src/rrd_fetch.c: fixed
+	  another seek issue ...
+
+2008-12-11 10:01  oetiker
+
+	* branches/1.2/program/rrdtool.spec,
+	  branches/1.3/program/rrdtool.spec, rrdtool.spec: The spec file for
+	  building the rrdtool as an RPM that comes with the release is not
+	  "friendly" to older versions of RHEL and derivatives. -- Martin
+	  Sperl <rrdtool@martin.sperl.org>
+
+2008-12-10 13:18  oetiker
+
+	* branches/1.3/program/src/rrd_restore.c, src/rrd_restore.c: On some
+	  architectures, strtod does not turn "NaN" into 'Not A Number
+	  (NAN)' se we better provide our own code here.
+
+2008-12-10 13:16  oetiker
+
+	* branches/1.3/website/sponsor.wml: integrated new sponsors on
+	  website
+
+2008-12-09 18:30  oetiker
+
+	* branches/1.3/program/doc/rrdgraph.pod,
+	  branches/1.3/program/src/rrd_graph.c,
+	  branches/1.3/program/src/rrd_graph.h,
+	  branches/1.3/program/src/rrd_tool.c, doc/rrdgraph.pod,
+	  src/rrd_graph.c, src/rrd_graph.h, src/rrd_tool.c: * forward ported
+	  right axis patch from 1.2 branche * fixed --full-size-mode sizing
+	  issue when used in combination with --title the work in the axis
+	  patch has been sponsored by VoltWerk.
+
+2008-12-08 16:07  oetiker
+
+	* branches/1.3/program/bindings/ruby/main.c,
+	  branches/1.3/program/bindings/ruby/test.rb, bindings/ruby/main.c,
+	  bindings/ruby/test.rb: Fix for last method in ruby bindings --
+	  Hiroyuki Ikezoe
+
+2008-12-05 15:39  oetiker
+
+	* branches/1.3/program/bindings/perl-shared/Makefile.PL,
+	  bindings/perl-shared/Makefile.PL: integrate osx build hints as
+	  indicated in #192
+
+2008-12-05 15:25  oetiker
+
+	* branches/1.3/program/src/rrd_open.c: accidentely removed #endif
+	  restored
+
+2008-12-05 15:18  oetiker
+
+	* branches/1.3/program/acinclude.m4,
+	  branches/1.3/program/configure.ac,
+	  branches/1.3/program/src/rrd_open.c, acinclude.m4, configure.ac,
+	  src/rrd_open.c: check for broken implementations of msync /
+	  MS_ASYNC where the mtime does not get updated. warn and explicitly
+	  call utime in rrd_open when a file is opened rw.
+
+2008-12-04 16:01  oetiker
+
+	* branches/1.3/program/src/rrd_graph.c, src/rrd_graph.c: Legends
+	  should NOT be placed in reverse order when using --full-size-mode
+	  ... this fixed #198.
+
+2008-12-04 09:03  oetiker
+
+	* branches/1.2/program/src/rrd_graph_helper.c,
+	  branches/1.3/program/src/rrd_graph_helper.c,
+	  src/rrd_graph_helper.c: Catch CDEF:tot= and raise and error to fix
+	  #199. Thanks to Jeron Massar for reporting this.
+
+2008-12-04 07:02  oetiker
+
+	* branches/1.3/program/CONTRIBUTORS,
+	  branches/1.3/program/WIN32-BUILD-TIPS.txt,
+	  branches/1.3/program/src/rrd_tool.c,
+	  branches/1.3/program/win32/rrd.sln,
+	  branches/1.3/program/win32/rrdtool.vcproj, CONTRIBUTORS,
+	  WIN32-BUILD-TIPS.txt, src/rrd_tool.c, win32/rrd.sln,
+	  win32/rrdtool.vcproj: Update to WIN32-BUILD-TIPS.txt and VC
+	  project files so that the rrdtool.exe can be built too. -- Stefan
+	  Ludewig Stefan.Ludewig exitgames.com
+
+2008-12-03 11:08  oetiker
+
+	* branches/1.2/program/src/rrd_fetch.c,
+	  branches/1.3/program/src/rrd_fetch.c, src/rrd_fetch.c: When
+	  fetching data from 'past' an rra, rrd_fetch was seeking past the
+	  rrd file. This did cause seek errors in some setups. Fixed. Thanks
+	  to Daniel Pocock for finding the problem.
+
+2008-12-03 10:46  oetiker
+
+	* branches/1.3/website/sponsor.wml: extra sponsors
+
+2008-12-03 10:42  oetiker
+
+	* branches/1.3/program/CONTRIBUTORS: added extra contributor
+
+2008-12-02 22:04  oetiker
+
+	* branches/1.3/program/Makefile.am, branches/1.3/program/src/rrd.h,
+	  branches/1.3/program/src/rrd_create.c,
+	  branches/1.3/program/src/rrd_diff.c,
+	  branches/1.3/program/src/rrd_dump.c,
+	  branches/1.3/program/src/rrd_error.c,
+	  branches/1.3/program/src/rrd_fetch.c,
+	  branches/1.3/program/src/rrd_first.c,
+	  branches/1.3/program/src/rrd_format.c,
+	  branches/1.3/program/src/rrd_getopt.c,
+	  branches/1.3/program/src/rrd_getopt.h,
+	  branches/1.3/program/src/rrd_getopt1.c,
+	  branches/1.3/program/src/rrd_gfx.c,
+	  branches/1.3/program/src/rrd_graph.c,
+	  branches/1.3/program/src/rrd_graph.h,
+	  branches/1.3/program/src/rrd_hw.c,
+	  branches/1.3/program/src/rrd_hw_math.c,
+	  branches/1.3/program/src/rrd_hw_update.c,
+	  branches/1.3/program/src/rrd_info.c,
+	  branches/1.3/program/src/rrd_lastupdate.c,
+	  branches/1.3/program/src/rrd_open.c,
+	  branches/1.3/program/src/rrd_parsetime.c,
+	  branches/1.3/program/src/rrd_resize.c,
+	  branches/1.3/program/src/rrd_restore.c,
+	  branches/1.3/program/src/rrd_rpncalc.c,
+	  branches/1.3/program/src/rrd_thread_safe_nt.c,
+	  branches/1.3/program/src/rrd_tune.c,
+	  branches/1.3/program/src/rrd_update.c,
+	  branches/1.3/program/src/rrd_xport.c,
+	  branches/1.3/program/win32/config.h,
+	  branches/1.3/program/win32/rrdlib.vcproj: make rrdtool compile on
+	  windows with cv++. check out win32/rrdlib.vcproj. --
+	  Christof.Wegmann with exitgames.com
+
+2008-12-02 12:35  oetiker
+
+	* branches/1.2/program/doc/rrdbuild.pod,
+	  branches/1.3/program/doc/rrdbuild.pod, doc/rrdbuild.pod: fixed
+	  solaris build instructions
+
+2008-11-18 08:42  oetiker
+
+	* branches/1.3/website/rrdworld/index.wml: fixed myysqlbind
+
+2008-11-17 16:35  oetiker
+
+	* branches/1.3/website/download.wml: addedsolaris download
+
+2008-11-17 15:25  oetiker
+
+	* branches/1.3/website/download.wml, branches/1.3/website/index.wml,
+	  branches/1.3/website/rrdworld/index.wml,
+	  branches/1.3/website/rrdworld/nhawk_description.xml,
+	  branches/1.3/website/rrdworld/nhawk_icon.png: monir upates
+
+2008-11-09 19:19  oetiker
+
+	* branches/1.3/program/configure.ac, configure.ac: be even more
+	  liberal with NOT using isfinite on solaris2.8
+
+2008-11-09 00:00  oetiker
+
+	* branches/1.2/program/src/rrd_graph.c,
+	  branches/1.2/program/src/rrd_graph.h,
+	  branches/1.3/program/src/rrd_graph.c, src/rrd_graph.c: use
+	  basename to determine filename for imginfo as suggested by
+	  sebastian
+
+2008-11-07 22:46  oetiker
+
+	* branches/1.2/program/src/rrd_graph.c,
+	  branches/1.3/program/src/rrd_graph.c, src/rrd_graph.c: fixed
+	  --font TITLE:12: problem -- tobi
+
+2008-11-07 13:36  oetiker
+
+	* branches/1.3/program/rrdtool.spec: added librrd.pc to spec file as
+	  requested byu Bernard Li
+
+2008-10-30 14:32  oetiker
+
+	* branches/1.3/program/doc/cdeftutorial.pod: fix from alex
+
+2008-10-28 08:47  oetiker
+
+	* branches/1.3/website/rrdtool-dump.xsd: added xsd for rrdtoool
+
+2008-10-27 18:40  oetiker
+
+	* branches/1.3/website/gallery/charles.png,
+	  branches/1.3/website/gallery/charles.xml,
+	  branches/1.3/website/gallery/index.en.html,
+	  branches/1.3/website/gallery/index.wml,
+	  branches/1.3/website/index.wml,
+	  branches/1.3/website/logos/digicomp.gif,
+	  branches/1.3/website/rrdworld/index.wml,
+	  branches/1.3/website/rrdworld/yacketystats.xml,
+	  branches/1.3/website/sponsor.wml: misc updates
+
+2008-10-27 05:35  oetiker
+
+	* branches/1.3/program/configure.ac: missed checkin for librrd.sym
+	  fix
+
+2008-10-26 15:16  oetiker
+
+	* branches/1.3/program/src/Makefile.am,
+	  branches/1.3/program/src/librrd.sym.in,
+	  branches/1.3/program/src/librrd.sym.in.in: fix for osx porability
+	  ... the # in librrd.sym did not work well there
+
+2008-10-24 06:20  oetiker
+
+	* branches/1.2/program/doc/rrdpython.pod,
+	  branches/1.3/program/doc/rrdpython.pod, doc/rrdpython.pod: fixed
+	  typo ... GAUGE not GUAGE
+
+2008-10-17 05:44  oetiker
+
+	* branches/1.3/program/src/rrd_graph.c, src/rrd_graph.c: use double
+	  for legend positioning to fight wiggle
+
+2008-10-16 21:32  oetiker
+
+	* branches/1.3/program/doc/rrdbuild.pod: fix version numbers
+
+2008-10-15 22:34  oetiker
+
+	* branches/1.3/program/doc/rrdbuild.pod: improved docu
+
+2008-10-07 15:38  oetiker
+
+	* branches/1.3/program/src/rrd_open.c: Daniel Pocock reported that
+	  the argument may be NULL in low-diskspace situations, so check for
+	  that here to prevent a segmentation fault. -- Florian Forster
+
+2008-10-04 16:04  oetiker
+
+	* branches/1.3/program/bindings/perl-piped/RRDp.pm,
+	  branches/1.3/program/bindings/perl-shared/RRDs.pm,
+	  branches/1.3/program/configure.ac,
+	  branches/1.3/program/doc/rrdbuild.pod,
+	  branches/1.3/program/rrdtool.spec,
+	  branches/1.3/program/src/Makefile.am,
+	  branches/1.3/program/src/librrd.pc.in,
+	  branches/1.3/program/src/pngsize.c,
+	  branches/1.3/program/src/rrd.h,
+	  branches/1.3/program/src/rrd_cgi.c,
+	  branches/1.3/program/src/rrd_create.c,
+	  branches/1.3/program/src/rrd_datalang.c,
+	  branches/1.3/program/src/rrd_diff.c,
+	  branches/1.3/program/src/rrd_dump.c,
+	  branches/1.3/program/src/rrd_error.c,
+	  branches/1.3/program/src/rrd_fetch.c,
+	  branches/1.3/program/src/rrd_first.c,
+	  branches/1.3/program/src/rrd_format.c,
+	  branches/1.3/program/src/rrd_format.h,
+	  branches/1.3/program/src/rrd_gfx.c,
+	  branches/1.3/program/src/rrd_graph.c,
+	  branches/1.3/program/src/rrd_graph_helper.c,
+	  branches/1.3/program/src/rrd_hw.c,
+	  branches/1.3/program/src/rrd_hw.h,
+	  branches/1.3/program/src/rrd_i18n.h,
+	  branches/1.3/program/src/rrd_info.c,
+	  branches/1.3/program/src/rrd_is_thread_safe.h,
+	  branches/1.3/program/src/rrd_last.c,
+	  branches/1.3/program/src/rrd_lastupdate.c,
+	  branches/1.3/program/src/rrd_not_thread_safe.c,
+	  branches/1.3/program/src/rrd_open.c,
+	  branches/1.3/program/src/rrd_resize.c,
+	  branches/1.3/program/src/rrd_restore.c,
+	  branches/1.3/program/src/rrd_rpncalc.c,
+	  branches/1.3/program/src/rrd_rpncalc.h,
+	  branches/1.3/program/src/rrd_thread_safe.c,
+	  branches/1.3/program/src/rrd_thread_safe_nt.c,
+	  branches/1.3/program/src/rrd_tool.c,
+	  branches/1.3/program/src/rrd_tool.h,
+	  branches/1.3/program/src/rrd_tune.c,
+	  branches/1.3/program/src/rrd_update.c,
+	  branches/1.3/program/src/rrd_version.c,
+	  branches/1.3/program/src/rrd_xport.c,
+	  branches/1.3/program/src/rrd_xport.h,
+	  branches/1.3/program/src/rrdupdate.c: prepare for the release of
+	  rrdtool-1.3.4
+
+2008-10-04 15:50  oetiker
+
+	* branches/1.3/program/configure.ac: finite broken on solaris 9 too
+	  ?
+
+2008-10-04 13:34  oetiker
+
+	* branches/1.3/program/src/rrd_resize.c, src/rrd_resize.c,
+	  trunk/tutorial/lisa2008/rrd-by-example/ex/hw-demo.pl: * rrd_resize
+	  fixed so that it does NOT alter the original file (mmap side
+	  effect) * rrd_resize can can deal with version 4 files, so let it
+
+2008-10-03 22:53  oetiker
+
+	* branches/1.3/program/src/rrd_open.c, src/rrd_open.c: The patch
+	  fixs rrdtools behaviour when presented with trunkated rrd files. *
+	  Make sure that we do not extend past the end of the file when
+	  reading the header. * Makes sure that the data portion of the file
+	  is large enough, based on the ds_cnt and the total number of RRA
+	  rows -- kevin brintnall
+
+2008-09-28 19:24  oetiker
+
+	* branches/1.3/program/MakeMakefile: Attached is a patch to lower
+	  the version requirements of libtool and automake. I have tested
+	  this on CentOS 4.x with the specified versions of libtool and
+	  automake and was able to build RRDTool fine. I did *not* test
+	  building with PHP, tcl, ruby or Python though. I also abstracted
+	  the version numbers of all the dependencies such that editing them
+	  in the future will be easier. -- Bernard Li
+
+2008-09-28 19:15  oetiker
+
+	* branches/1.3/program/rrdtool.spec: Attached is a patch against the
+	  spec file shipped with rrdtool-1.3.3.spec which will make it
+	  buildable (at least it works on my CentOS 4.x system). -- Bernard
+	  Li
+
+2008-09-28 15:01  oetiker
+
+	* branches/1.2/program/src/rrd_graph.c,
+	  branches/1.3/program/src/rrd_graph.c,
+	  branches/1.3/program/src/rrd_tool.c, src/rrd_graph.c,
+	  src/rrd_tool.c: vdef calc was using end_orig to determine for
+	  which range it should do its calculations which is odd, since orig
+	  is only the requested range as invocation time and not the data
+	  range deliverd by fetch. It does fall completely flat when
+	  shifting since shifting does not affect the original data. Bug
+	  #177 reported by hokiel
+
+2008-09-27 11:44  oetiker
+
+	* branches/1.2/program/src/rrd_xport.c,
+	  branches/1.3/program/src/rrd_xport.c, src/rrd_xport.c: rrdxport
+	  was completely broken for exporting datasources that did not have
+	  a uniform step size. Thanks to Peter Valdemar Mørch for finding
+	  this.
+
+2008-09-23 07:57  oetiker
+
+	* branches/1.3/website/gallery/index.en.html,
+	  branches/1.3/website/gallery/index.wml,
+	  branches/1.3/website/gallery/pings.png,
+	  branches/1.3/website/gallery/pings.xml: fixed ping image
+
+2008-09-22 06:34  oetiker
+
+	* branches/1.3/program/MakeMakefile,
+	  branches/1.3/program/configure.ac: fixed destdir for default
+	  install of language bindings and removed sepp preference
+
+2008-09-22 05:38  oetiker
+
+	* branches/1.2/program/configure.ac,
+	  branches/1.3/program/configure.ac, configure.ac: use default
+	  prefix for ruby install if no user defined prefix is available
+
+2008-09-22 05:37  oetiker
+
+	* branches/1.3/website/index.wml: fix layout
+
+2008-09-19 20:34  oetiker
+
+	* branches/1.3/program/bindings/perl-shared/Makefile.PL,
+	  bindings/perl-shared/Makefile.PL: Bsd lirary path switch added to
+	  perl bindings makefile -- as suggested by Kevin Brintnall
+
+2008-09-18 13:30  oetiker
+
+	* branches/1.3/program/src/rrd_open.c, src/rrd_open.c: Fix for
+	  debian bug 498183 ... never *advise after the end of the file. On
+	  sparc this causes a segfault. Thanks to Sebastian Harl and Jurij
+	  Smakov for finding this.
+
+2008-09-14 20:33  oetiker
+
+	* branches/1.3/program/src/rrd_config_bottom.h: added missing bottom
+	  config
+
+2008-09-14 20:32  oetiker
+
+	* branches/1.3/program/bindings/perl-piped/RRDp.pm,
+	  branches/1.3/program/bindings/perl-shared/RRDs.pm,
+	  branches/1.3/program/configure.ac,
+	  branches/1.3/program/doc/rrdbuild.pod,
+	  branches/1.3/program/rrdtool.spec,
+	  branches/1.3/program/src/pngsize.c,
+	  branches/1.3/program/src/rrd.h,
+	  branches/1.3/program/src/rrd_cgi.c,
+	  branches/1.3/program/src/rrd_create.c,
+	  branches/1.3/program/src/rrd_datalang.c,
+	  branches/1.3/program/src/rrd_diff.c,
+	  branches/1.3/program/src/rrd_dump.c,
+	  branches/1.3/program/src/rrd_error.c,
+	  branches/1.3/program/src/rrd_fetch.c,
+	  branches/1.3/program/src/rrd_first.c,
+	  branches/1.3/program/src/rrd_format.c,
+	  branches/1.3/program/src/rrd_format.h,
+	  branches/1.3/program/src/rrd_gfx.c,
+	  branches/1.3/program/src/rrd_graph.c,
+	  branches/1.3/program/src/rrd_graph_helper.c,
+	  branches/1.3/program/src/rrd_hw.c,
+	  branches/1.3/program/src/rrd_hw.h,
+	  branches/1.3/program/src/rrd_i18n.h,
+	  branches/1.3/program/src/rrd_info.c,
+	  branches/1.3/program/src/rrd_is_thread_safe.h,
+	  branches/1.3/program/src/rrd_last.c,
+	  branches/1.3/program/src/rrd_lastupdate.c,
+	  branches/1.3/program/src/rrd_not_thread_safe.c,
+	  branches/1.3/program/src/rrd_open.c,
+	  branches/1.3/program/src/rrd_resize.c,
+	  branches/1.3/program/src/rrd_restore.c,
+	  branches/1.3/program/src/rrd_rpncalc.c,
+	  branches/1.3/program/src/rrd_rpncalc.h,
+	  branches/1.3/program/src/rrd_thread_safe.c,
+	  branches/1.3/program/src/rrd_thread_safe_nt.c,
+	  branches/1.3/program/src/rrd_tool.c,
+	  branches/1.3/program/src/rrd_tool.h,
+	  branches/1.3/program/src/rrd_tune.c,
+	  branches/1.3/program/src/rrd_update.c,
+	  branches/1.3/program/src/rrd_version.c,
+	  branches/1.3/program/src/rrd_xport.c,
+	  branches/1.3/program/src/rrd_xport.h,
+	  branches/1.3/program/src/rrdupdate.c: prepare for the release of
+	  rrdtool-1.3.3
+
+2008-09-14 20:31  oetiker
+
+	* branches/1.3/program/rrdtool-1.3-release: fix release script for
+	  1.3 branche
+
+2008-09-14 00:42  oetiker
+
+	* branches/1.3/program/configure.ac,
+	  branches/1.3/program/doc/rrdgraph.pod,
+	  branches/1.3/program/src/Makefile.am,
+	  branches/1.3/program/src/rrd_format.h,
+	  branches/1.3/program/src/rrd_graph.c: resync with trunk since
+	  these are fixes
+
+2008-09-08 22:14  oetiker
+
+	* branches/1.3/website/navbar.inc: added forum
+
+2008-09-08 22:14  oetiker
+
+	* branches/1.3/website/award-white.png,
+	  branches/1.3/website/bin/pod2wml.classic.sh,
+	  branches/1.3/website/forum.wml,
+	  branches/1.3/website/gallery/index.en.html,
+	  branches/1.3/website/inc/favicon.ico,
+	  branches/1.3/website/inc/happy-tobi.png,
+	  branches/1.3/website/inc/rrdtool-gold.png,
+	  branches/1.3/website/inc/template.inc,
+	  branches/1.3/website/oscon-120x60.gif,
+	  branches/1.3/website/stream-pop.png: added more bits
+
+2008-09-08 22:08  oetiker
+
+	* branches/1.3/website/.wmkrc, branches/1.3/website/.wmlrc: they
+	  should be in svn I guess
+
+2008-09-08 22:04  oetiker
+
+	* branches/1.3/website/download.wml,
+	  branches/1.3/website/inc/template.inc: clean up mirror list
+
+2008-09-07 10:23  oetiker
+
+	* branches/1.3/program: branching for 1.3
+
+2008-09-07 10:22  oetiker
+
+	* branches/1.3/website: branche website
+
+2008-09-07 10:21  oetiker
+
+	* branches/1.3: prepare for branching
+
